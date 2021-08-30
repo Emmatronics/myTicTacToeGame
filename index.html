@@ -5,8 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        section{
+            border: solid thick black;
+            width: 300px;
+            height: 500px;
+            padding: 15px;
+        }
+        section div{
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            flex-wrap: wrap;
+            }
+        .btn{
+            border:thin thick black;
+            width: 75px;
+            height: 60px;
+        }
+    </style>
 </head>
 <body>
+    <section id="">
+        <h3>Tic Tac Toe Game</h3>
+        <div>
+            <input type="button" class="btn" onclick="gameFunc(event)" oninput="winningCondition()" id="first">
+            <input type="button" class="btn" onclick="gameFunc(event)" oninput="winningCondition()" id="second">
+            <input type="button" class="btn" onclick="gameFunc(event)" oninput="winningCondition()" id="third">
+            <input type="button" class="btn" onclick="gameFunc(event)" oninput="winningCondition()" id="fourth">
+            <input type="button" class="btn" onclick="gameFunc(event)" oninput="winningCondition()" id="fifth">
+            <input type="button" class="btn" onclick="gameFunc(event)" oninput="winningCondition()" id="sixt">
+            <input type="button" class="btn" onclick="gameFunc(event)" oninput="winningCondition()" id="seventh">
+            <input type="button" class="btn" onclick="gameFunc(event)" oninput="winningCondition()" id="eight">
+            <input type="button" class="btn" onclick="gameFunc(event)" id="ninth">
+        </div>
+            <h3 id="playerOne"></h3>
+    </section>
     
+    <script>
+        let play = "X";
+        const gameFunc = event =>{
+            // event.target.value = "X";
+            if (event.target.value=== "" && play == "X") {
+                event.target.value = play;
+                play = "O";
+                playerOne.innerHTML ="Player O turn";
+            }else if (event.target.value=== "" && play == "O") {
+                event.target.value = play;
+                play = "X" 
+                playerOne.innerHTML ="Player X turn";
+            }
+        }
+        const winningCondition = ()=>{
+            if (first.innerHTML== "X" && second.innerHTML== "X" && third.innerHTML== "X" ) {
+            console.log('yo')
+        }
+        }
+        
+        // const winningCondition = event=>{
+        //      if (event.target.value === "X" && event.target.value=== "O") {
+        //          alert(Restart);
+        //      }
+         
+    </script>
 </body>
 </html>
